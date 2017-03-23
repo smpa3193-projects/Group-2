@@ -1,1 +1,17 @@
-Group Meeting - March 2, 8:00 p.m.All interested in doing something with TwitterIdeas Considered:- Sports- GW Basketball (final two minutes of game)- Scraping menus of D.C. restaurants- Cherry blossomsIdea:- Create a Twitterbot that aggregates all of the stories or tweets about the Cherry Blossom Festival and Cherry Blossoms in D.C. - Keywords: Cherry Blossoms, Cherry Blossom Festival, peak bloom, #CherryBlossoms #CherryBlossom Festival, etc.- This would be useful as the Cherry Blossoms are due to bloom this spring, and people have conversations about this on Twitter year round.
+Group Meeting - March 2, 8:00 p.m.
+
+All interested in doing something with Twitter
+
+Ideas Considered:
+- Sports
+- GW Basketball (final two minutes of game)
+- Scraping menus of D.C. restaurants
+- Cherry blossoms
+
+
+Idea:
+- Create a Twitterbot that aggregates all of the stories or tweets about the Cherry Blossom Festival and Cherry Blossoms in D.C. 
+- Keywords: Cherry Blossoms, Cherry Blossom Festival, peak bloom, #CherryBlossoms #CherryBlossom Festival, etc.
+- This would be useful as the Cherry Blossoms are due to bloom this spring, and people have conversations about this on Twitter year round.
+
+Data source: Tweets that contain words or phrases pertaining to the Cherry Blossom Festival
