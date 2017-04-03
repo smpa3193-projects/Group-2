@@ -1,3 +1,19 @@
+UPDATE—Group Meeting April 4, 2017
+
+This week, our group met to solidify exactly what we want to do for the final project. In our previous update, we mentioned creating a Twitterbot that would aggregate all of the stories or tweets about the Cherry Blossom Festival. However, as you mentioned in your email to us, the Cherry Blossom Festival is happening this week (and we want to make our project more relevant). 
+
+Revised Version of Project Idea
+
+Twitterbot - “By the Basin” - @bythebasin
+
+By the Basin will be a Twitterbot that aggregates all of the stories or tweets about activities happening in and around the Tidal Basin (i.e. National Mall vicinity). This includes all events leading up to and during the Cherry Blossom Festival, as well as activities that occur year round. Whether it’s the paddle boats over the summer or D.C.’s hottest food truck parked by the Jefferson - By the Basin aims to keep the D.C. flaneur or tourist involved with what is happening in the nation’s capital. 
+
+By the Basin features:
+- tweeting/retweeting people and organizations that are promoting activities around the Basin (starting a conversation)
+- using geographic data to aggregate the tweets about these events
+- also tweeting weather information 
+
+
 Group Meeting - March 2, 8:00 p.m.
 
 All interested in doing something with Twitter
@@ -14,4 +30,8 @@ Idea:
 - Keywords: Cherry Blossoms, Cherry Blossom Festival, peak bloom, #CherryBlossoms #CherryBlossom Festival, etc.
 - This would be useful as the Cherry Blossoms are due to bloom this spring, and people have conversations about this on Twitter year round.
 
-Data source: Tweets that contain words or phrases pertaining to the Cherry Blossom Festival
+UPDATE:
+
+Our new idea is creating a Twitterbot and accompanying website to create a resource that estimates how many people are walking around the Tidal Basin and what the weather is like. This would be helpful for people who are thinking about visiting the tidal basin, but are wary of weather/crowds.
+
+The data sources would be 1) tweets where people have "checked in" at the tidal basin or tweeted about it and 2) a weather report, we could probably use weather.com. The bot could run every hour using these sources. The output would be something like "At 300 people at the tidal basin. 75 degrees, 5 percent humidity."
