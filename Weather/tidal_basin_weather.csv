@@ -1,16 +1,2 @@
 time,descriptions,temp,feels,precip,humidity,wind
-,3:30 pmSun,Cloudy,87°,87°,15%,29%,SW 18 mph
-,4:00 pmSun,Cloudy,87°,87°,15%,30%,WSW 18 mph
-,5:00 pmSun,Cloudy,84°,84°,15%,34%,WSW 17 mph
-,6:00 pmSun,Cloudy,81°,81°,15%,39%,SW 13 mph
-,7:00 pmSun,Partly Cloudy,79°,80°,5%,43%,SW 15 mph
-,8:00 pmSun,Mostly Clear,77°,77°,5%,46%,SW 12 mph
-,9:00 pmSun,Partly Cloudy,75°,75°,10%,49%,WSW 11 mph
-,10:00 pmSun,Partly Cloudy,73°,73°,20%,53%,WSW 11 mph
-,11:00 pmSun,Partly Cloudy,72°,72°,20%,55%,WSW 10 mph
-,12:00 amMon,Partly Cloudy,70°,70°,20%,59%,WSW 9 mph
-,1:00 amMon,Partly Cloudy,70°,70°,25%,63%,WSW 7 mph
-,2:00 amMon,Partly Cloudy,69°,69°,15%,65%,WSW 6 mph
-,3:00 amMon,Mostly Cloudy,68°,68°,15%,65%,WSW 5 mph
-,4:00 amMon,Mostly Cloudy,67°,67°,15%,68%,WSW 5 mph
-,5:00 amMon,Mostly Cloudy,66°,66°,20%,70%,W 5 mph
+,3:00 pmSun,Cloudy,61°,61°,0%,51%,ENE 4 mph
