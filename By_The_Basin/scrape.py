@@ -2,6 +2,17 @@ import csv
 import requests
 from BeautifulSoup import BeautifulSoup
 import sys
+from datetime import datetime
+from twython import Twython
+import csv
+
+CONSUMER_KEY = 'abjfNXUtEsKvKCvbs4koJ4sx7'
+CONSUMER_SECRET = '5wzIQqg1kYdPKYYxHHvxfymuCKYMphfdZ7G92j240cjF4aeEMD'
+ACCESS_TOKEN = '852283264463245312-K6W8DXylWeMrCSEf7iDGRrDClp2eR9C'
+ACCESS_TOKEN_SECRET = 'qmq9uluDLxWUlDGwyuMoRhR9FnLpPwev3dk7pc4mdYDA0'
+
+twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -34,16 +45,13 @@ tweets = search['statuses']
 
 for tweet in tweets:
     # convert timestamp to a DateTime object
-    # ts = datetime.strptime()
-    # get the hour of the tweet (maybe the minute)
-    # ts.hour
-    # in list_of_rows, find the reading that corresponds to that hour and day
+    ts = datetime.strptime(tweet['created_at'], "%m %d %y")
+for row in list_of_rows:
     match = next(row for row in list_of_rows if row[8].hour == ts.hour and row[8].day == ts.day)
     if match:
-        tweet.update_status("It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['screen_name'], match['time'], tweet['entities']['urls'][0]['expanded_url'])
+        tweet.update_status("It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['screen_name'], match['time'], tweet['entities']['urls'][0]['expanded_url']))
     else:
-        # we couldn't find a weather reading for this tweet
-
+    	print "We couldn't find a weather reading for this tweet."
 
 with open ('data.csv', 'w') as fp:
     a = csv.writer(fp)
