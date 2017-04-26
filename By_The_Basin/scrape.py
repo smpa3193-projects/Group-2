@@ -45,7 +45,7 @@ tweets = search['statuses']
 
 for tweet in tweets:
     # convert timestamp to a DateTime object
-    ts = datetime.strptime(tweet['created_at'], "%m %d %y")
+    ts = datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y')
 for row in list_of_rows:
     match = next(row for row in list_of_rows if row[8].hour == ts.hour and row[8].day == ts.day)
     if match:
