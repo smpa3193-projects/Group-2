@@ -41,6 +41,8 @@ for row in list_of_rows:
 
 search = twitter.search(q='Tidal Basin', count="100")
 tweets = search['statuses']
+existing_tweets = tweets
+tweet_texts = [tweet['text'] for tweet in existing_tweets]
 
 # TODO
 # grab previous tweets already posted
@@ -53,16 +55,18 @@ for tweet in tweets:
     except:
         print "No match for tweet at %s" % tweet['created_at']
     try:
-        url = result['id_str']
+        url = result['entities']['urls'][0]['expanded_url']
     except:
-        results = twitter.cursor(twitter.search, q='twitter')
-        for result in results:
-            print result['id_str']
+        url = None
     if match:
         message = "It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['user']['screen_name'], ts.hour, url)
         twitter.update_status(status=message)
     else:
-        print "We couldn't find a weather reading for this tweet."
+    	print "We couldn't find a weather reading for this tweet."
+    if message in tweet_texts:
+    	continue
+    else:
+		twitter.update_status(status=message)
 
 with open ('data.csv', 'w') as fp:
     a = csv.writer(fp)
@@ -70,10 +74,8 @@ with open ('data.csv', 'w') as fp:
 
     for result in tweets:
         try:
-            url = result['id_str']
-    except:
-        results = twitter.cursor(twitter.search, q='twitter')
-        for result in results:
-            print result['id_str']
+            url = result['entities']['urls'][0]['expanded_url']
+        except:
+            url = None
         text=[['Tidal Basin', result['text'].encode('utf-8'), url]]
     a.writerows((text))
