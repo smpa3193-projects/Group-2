@@ -4,7 +4,6 @@ from BeautifulSoup import BeautifulSoup
 import sys
 from datetime import datetime
 from twython import Twython
-import csv
 
 CONSUMER_KEY = 'abjfNXUtEsKvKCvbs4koJ4sx7'
 CONSUMER_SECRET = '5wzIQqg1kYdPKYYxHHvxfymuCKYMphfdZ7G92j240cjF4aeEMD'
@@ -43,19 +42,30 @@ for row in list_of_rows:
 search = twitter.search(q='Tidal Basin', count="100")
 tweets = search['statuses']
 
+# TODO
+# grab previous tweets already posted
+# inside loop below, check to see if the status message has already been posted. if so, don't post again.
+
 for tweet in tweets:
-    # convert timestamp to a DateTime object
     ts = datetime.strptime(tweet['created_at'], '%a %b %d %H:%M:%S +0000 %Y')
-for row in list_of_rows:
-    match = next(row for row in list_of_rows if row[8].hour == ts.hour and row[8].day == ts.day)
+    try:
+        match = next(row for row in list_of_rows if row[8].hour == ts.hour and row[8].day == ts.day)
+    except:
+        print "No match for tweet at %s" % tweet['created_at']
+    try:
+        url = result['entities']['urls'][0]['expanded_url']
+    except:
+        url = None
     if match:
-        tweet.update_status("It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['screen_name'], match['time'], tweet['entities']['urls'][0]['expanded_url']))
+        message = "It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['user']['screen_name'], ts.hour, url)
+        twitter.update_status(status=message)
     else:
     	print "We couldn't find a weather reading for this tweet."
+    if def unique_chars_set(s):
+    	return len(s) == len(set(s))
 
 with open ('data.csv', 'w') as fp:
     a = csv.writer(fp)
-    # add a header row
     a.writerow(('Tidal Basin', 'Tweet Text', 'URL'))
 
     for result in tweets:
@@ -64,4 +74,4 @@ with open ('data.csv', 'w') as fp:
         except:
             url = None
         text=[['Tidal Basin', result['text'].encode('utf-8'), url]]
-        a.writerows((text))
+    a.writerows((text))
