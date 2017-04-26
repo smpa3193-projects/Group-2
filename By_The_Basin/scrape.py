@@ -53,16 +53,16 @@ for tweet in tweets:
     except:
         print "No match for tweet at %s" % tweet['created_at']
     try:
-        url = result['entities']['urls'][0]['expanded_url']
+        url = result['id_str']
     except:
-        url = None
+        results = twitter.cursor(twitter.search, q='twitter')
+        for result in results:
+            print result['id_str']
     if match:
         message = "It was %s with %s when %s posted at %s: %s" % (match[3], match[2], tweet['user']['screen_name'], ts.hour, url)
         twitter.update_status(status=message)
     else:
-    	print "We couldn't find a weather reading for this tweet."
-    if def unique_chars_set(s):
-    	return len(s) == len(set(s))
+        print "We couldn't find a weather reading for this tweet."
 
 with open ('data.csv', 'w') as fp:
     a = csv.writer(fp)
@@ -70,8 +70,10 @@ with open ('data.csv', 'w') as fp:
 
     for result in tweets:
         try:
-            url = result['entities']['urls'][0]['expanded_url']
-        except:
-            url = None
+            url = result['id_str']
+    except:
+        results = twitter.cursor(twitter.search, q='twitter')
+        for result in results:
+            print result['id_str']
         text=[['Tidal Basin', result['text'].encode('utf-8'), url]]
     a.writerows((text))
